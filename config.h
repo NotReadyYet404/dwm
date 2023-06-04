@@ -89,11 +89,17 @@ static const Key keys[] = {
 	/*								Change focus between the window 				*/
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-
+	/*								Move location of window in window stack			*/
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_o,      incnmaster,     {.i = -1 } },
+
+	{ MODKEY,                       XK_i,	   viewtoleft,     {0} },
+	{ MODKEY,                       XK_o,	   viewtoright,    {0} },
+	{ MODKEY|ShiftMask,             XK_i,	   tagtoleft,      {0} },
+	{ MODKEY|ShiftMask,             XK_o,	   tagtoright,     {0} },
+
+	{ MODKEY,                       XK_y,      incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_u,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
